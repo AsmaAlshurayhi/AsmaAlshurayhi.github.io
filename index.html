@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asma Alshurayhi - Artist Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Amiri:wght@400;700&amp;family=Aref+Ruqaa:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/waltograph" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Crimson Text', serif;
+        line-height: 1.8;
+        color: #ffffff;
+        background-color: #000000;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #333333;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Waltograph', 'Inter', sans-serif;
+      }
+
+
+
+      nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+        font-family: 'Inter', sans-serif;
+      }
+
+      nav a:hover {
+        color: #cccccc;
+      }
+
+      .lang-toggle {
+        background: #333333;
+        color: white;
+        border: 1px solid #666666;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+      }
+
+      .lang-toggle:hover {
+        background: #555555;
+      }
+
+      main {
+        margin-top: 80px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: #000000;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-family: 'Waltograph', 'Crimson Text', serif;
+      }
+
+
+
+      .hero p {
+        font-size: 1.2rem;
+        color: #cccccc;
+        font-style: italic;
+      }
+
+      section {
+        padding: 4rem 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      section:nth-child(even) {
+        background: #0a0a0a;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-family: 'Crimson Text', serif;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #dddddd;
+        margin: 2rem 0 1rem 0;
+        font-family: 'Crimson Text', serif;
+      }
+
+      h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 1.5rem 0 0.5rem 0;
+        font-family: 'Inter', sans-serif;
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+        text-align: justify;
+      }
+
+      .project {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+        border: 1px solid #333333;
+      }
+
+      .project-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .project-meta {
+        font-size: 0.95rem;
+        color: #999999;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .image-placeholder {
+        background: #0a0a0a;
+        border: 2px dashed #444444;
+        border-radius: 8px;
+        padding: 3rem 2rem;
+        text-align: center;
+        margin: 2rem 0;
+        color: #666666;
+        font-style: italic;
+      }
+
+      .contact-info {
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+        border: 1px solid #333333;
+      }
+
+      .contact-info a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav {
+          gap: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        section {
+          padding: 2rem 1rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body style="">
+    <header>
+      <div class="header-content">
+        <a href="#" class="logo">Asma Alshurayhi</a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#exhibitions">Exhibitions</a>
+          <a href="#press">Press</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Asma Alshurayhi</h1>
+        <p>Contemporary Artist</p>
+      </section>
+
+      <section id="about">
+          <h2>About</h2>
+
+          <h3>About Me</h3>
+          <p>
+            Based in Saudi Arabia, Asma Alshurayhi works across textile, material research, cultural symbolism, and
+            immersive sound. She earned her Fine Arts degree from King Saud University and expanded her practice through
+            rigorous engagement with contemporary art programs, masterclasses, and research workshops at institutions
+            including Misk Art Institute including a research-based artist residency program, the American University in
+            Cairo, and Asia Art Archive.
+          </p>
+
+          <p>
+            Her practice includes embroidery, painting, collage, and sound-based works that investigate acoustic memory,
+            spatial listening, and the emotional dimensions of place. By combining visual and sonic elements, her work
+            creates layered narratives informed by heritage, sensory experience, and cultural inquiry.
+          </p>
+
+          <p>
+            Asma's work has been exhibited within significant institutional contexts, including collaborations with the
+            Ministry of Culture, Ministry of Human Resources, and Ministry of Tourism. Her work has been featured in Hia
+            Magazine highlighting its integration of craft, symbolism, and contemporary research methodologies.
+          </p>
+
+          <p>
+            Driven by rigorous research, material exploration, and interdisciplinary dialogue, her practice develops a
+            cohesive body of work grounded in observation, memory, and cultural resonance.
+          </p>
+
+          <h3>Artist Statement</h3>
+          <p>
+            My practice unfolds across expressive abstraction, textile-based forms, cultural symbolism, and immersive
+            sound, shaped by an evolving inquiry into memory, materiality, and sensory perception.
+          </p>
+
+          <p>
+            I began my formal study of art at King Saud University, where the foundations of drawing, color, and visual
+            analysis marked the beginning of a long research trajectory. Over time, this foundation expanded through
+            advanced programs, masterclasses, and contemporary art studies with respected regional and international
+            institutions — experiences that deepened my understanding of material processes, symbolic languages, and the
+            evolving discourse of contemporary practice.
+          </p>
+
+          <p>
+            <strong>My work is rooted in questions:</strong><br>
+            How do materials carry memory?<br>
+            What is the emotional architecture of sound?<br>
+            How can threads, textures, and rhythms act as forms of cultural storytelling?<br>
+            And how do we perceive identity through what we see — and what we hear?
+          </p>
+
+          <p>
+            These inquiries guide my transition toward interdisciplinary and immersive forms, where embroidery, layered
+            surfaces, and field-recorded sound converge into a unified visual–sonic language. I see my practice as a
+            process of uncovering: tracing emotional, cultural, and sensory layers that live both within the individual
+            and within the wider landscape.
+          </p>
+
+          <p>
+            <em>Across mediums, each piece becomes a topography of presence — a space where memory is textured, resonant,
+              and profoundly human.</em>
+          </p>
+      </section>
+
+      <section id="projects">
+          <h2>Projects / Works</h2>
+
+          <div class="project">
+            <h4 class="project-title">The Najdi Triangle</h4>
+            <div class="project-meta">
+              Year: 2023 | Materials: Acrylic Clay, wide canvas panels, video projection | One work consisting of 16
+              units
+            </div>
+            <img src="https://www.genspark.ai/api/files/s/1lAY7JXq" alt="The Najdi Triangle Installation" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/Agug0rGI" alt="The Najdi Triangle Installation Detail" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <p>
+              This work is inspired by the triangular motif in Najdi architecture. Through research, I discovered that
+              the triangle is not merely a decorative element, but carries layered meanings and symbolic depth in the
+              built heritage of Najd.
+            </p>
+            <p>
+              The installation consists of 16 clay-like blocks, each representing a traditional Najdi house with
+              elevated geometric structures. A projector overlays the piece: every ten seconds, a word appears,
+              reflecting one of the symbolic meanings of the triangle in Najdi culture.
+            </p>
+          </div>
+
+          <div class="project">
+            <h4 class="project-title">All We See is Appearance</h4>
+            <div class="project-meta">
+              Year: 2023–2024 | Materials: Fabric, hand embroidery threads, beads, acrylic boxes | 7 panels |
+              Dimensions: Various
+            </div>
+            <img src="https://www.genspark.ai/api/files/s/2yAZ2oLE" alt="All We See is Appearance - Detail" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/wM3edb2D" alt="All We See is Appearance - Mountain Panel" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/JnqsAYbT" alt="All We See is Appearance - Full View" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <p>
+              This work is inspired by the old proverb "We are only responsible for the outward" and the jurisprudential
+              principle "The outward is ours, and God knows the inward."
+            </p>
+            <p>
+              The series consists of seven textile panels, hand-embroidered with diverse threads, materials, and colors.
+              Each piece carries fine details, with every element carefully crafted and holding a unique symbolism. The
+              mountain, its layers, the sun, and the threads… all intertwine to create a serene and dignified visual
+              presence. The panels are presented in acrylic boxes that preserve them and provide visual depth.
+            </p>
+          </div>
+
+          <div class="project">
+            <h4 class="project-title">Layers of Riyadh</h4>
+            <div class="project-meta">
+              Sound Installation, 2025 | A Sonic Experience — A Day Across Three Generations | Duration: 6 minutes 20 seconds<br>
+              Produced during an artist residency at Misk Art Institute, Riyadh
+            </div>
+            <img src="https://www.genspark.ai/api/files/s/jFSH9Dn3" alt="Layers of Riyadh - Listening Room" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/oG1BydRT" alt="Layers of Riyadh - Cassette Tapes and Process Book" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/zo5ZHzEu" alt="Layers of Riyadh - Exhibition Text" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/7MLrGkwq" alt="Layers of Riyadh - Layered Curtains Entrance" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            <img src="https://www.genspark.ai/api/files/s/cw3ewx6E" alt="Layers of Riyadh - Seating Arrangement" style="width: 100%; border-radius: 8px; margin: 2rem 0;" data-height-listener-added="true">
+            
+            <p><strong>Overview</strong></p>
+            <p>
+              Layers of Riyadh is a sonic portrait of a city unfolding through a single day across three generations.
+              The work begins with the Fajr Adhan of 1985 and concludes with the Isha Adhan of 2025, tracing a temporal arc shaped by memory, transformation, and lived experience.
+            </p>
+            <p>
+              Rather than documenting Riyadh, the installation invites the listener to inhabit it from within — through domestic soundscapes, social rituals, and moments of urban change. Sound becomes a medium for remembering rather than observing.
+            </p>
+
+            <p><strong>Artist Statement</strong></p>
+            <p>
+              This work began with a simple question:<br>
+              How does a city sound when time moves through its people?
+            </p>
+            <p>
+              I approached Riyadh as an emotional landscape rather than a visual one, allowing sound to carry traces of childhood, generational rhythm, and transformation.
+              The work moves fluidly between decades, unfolding like a shared memory shaped by listening.
+            </p>
+
+            <p><strong>Installation Experience</strong></p>
+            <p>
+              The listening room was designed as a calm, inward space.
+              A circular speaker arrangement guided sound around the body, supported by low, warm lighting and inward-facing seating. Sound moved gently through the room, allowing time to unfold as a continuous presence rather than a fixed sequence.
+            </p>
+
+            <p><strong>Embodied Listening &amp; Sensory Design</strong></p>
+            <p>
+              Listening was approached as an embodied act. Layered curtains formed both the studio and listening room, translating the conceptual foundation of Layers of Riyadh into a physical threshold. Visitors passed through layers before entering a soundscape composed of layered voices and time.
+            </p>
+            <p>
+              Midway through the experience, the recorded sound of Saudi coffee being poured during a wedding moment coincided with a live gesture: a coffee server entered the space, pouring Arabic coffee from a traditional dallah. Sound and action briefly converged, transforming listening into a lived ritual.
+            </p>
+            <p>
+              The room was designed in tones drawn from Najdi architecture — sand, earth, and clay — and lightly scented with oud and incense, recalling the atmosphere of traditional majlis gatherings. Seating referenced the leather interiors of old GMC vehicles, evoking memories of travel and listening in motion.
+            </p>
+
+            <p><strong>Process, Participation &amp; Collective Memory</strong></p>
+            <p>
+              Two printed publications extended the work beyond the listening moment.
+              A large-format process book documented the conceptual development and sound mapping of the project. Alongside it, a second book invited visitors to write down the sounds that stayed with them after the experience, transforming listening into a shared act of memory.
+            </p>
+
+            <p><strong>Afterlistening</strong></p>
+            <p>
+              As visitors exited the space, each received an audio cassette designed to be listened to later.
+              The cassette carried a brief message:
+            </p>
+            <p style="font-style: italic; padding-left: 2rem;">
+              "This experience is the beginning of listening.<br>
+              The rest is yours."
+            </p>
+            <p>
+              By placing the message outside the installation, the work continued into the listener's personal time and space, shifting listening from a guided experience to an individual responsibility.
+            </p>
+
+            <p><strong>Audience Response</strong></p>
+            <p>
+              The installation elicited strong emotional responses.
+              Many visitors described a sense of recognition and intimacy, with some moved to tears as personal memories surfaced through sound.
+            </p>
+
+            <p><strong>Technical Notes</strong></p>
+            <p>
+              • Field recordings from across Riyadh<br>
+              • Temporal structure: 1985 → 2025<br>
+              • Layered sound composition<br>
+              • Immersive multi-speaker setup
+            </p>
+
+            <p><strong>Credits</strong></p>
+            <p>
+              <strong>Artist:</strong> Asma Alshurayhi<br>
+              Field Recording • Concept Development • Temporal Narrative • Sound Design
+            </p>
+            <p>
+              <strong>Spatial audio engineering and final mix:</strong><br>
+              Execution initiated at DAF and completed at Faz Waves Studio
+            </p>
+          </div>
+      </section>
+
+      <section id="exhibitions">
+          <h2>Exhibitions &amp; Residencies</h2>
+
+          <h3>Residency</h3>
+          <ul>
+            <li>
+              <strong>Misk Art Institute</strong> — MR10 Artist Residency Program (2025, Riyadh, Saudi Arabia)<br>
+              A research-based residency focusing on material exploration, cultural symbolism, and interdisciplinary
+              practice.
+            </li>
+          </ul>
+
+          <h3>Selected Exhibitions</h3>
+          <ul>
+            <li>Ministry of Tourism — Saudi Founding Day Exhibition</li>
+            <li>Ministry of Culture — National Art Competition</li>
+            <li>Ministry of Human Resources — Cultural Program Collaboration</li>
+            <li>Tajreed Art Gallery — Group Exhibitions (Riyadh)</li>
+          </ul>
+      </section>
+
+      <section id="press">
+          <h2>Press &amp; Media</h2>
+
+          <h3>Hia Magazine — Artist Feature (2025)</h3>
+          <p>
+            A feature highlighting Asma Alshurayhi's contemporary practice, exploring her integration of textile
+            craftsmanship, sound, and cultural symbolism within her artistic research.
+          </p>
+          <p><a href="#">Read the full feature</a></p>
+      </section>
+
+      <section id="contact">
+          <h2>Contact</h2>
+
+          <div class="contact-info">
+            <p>For inquiries, collaborations, or exhibition opportunities:</p>
+            <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#2c4e555f445e55444d6c4b414d4540024f4341"><span class="__cf_email__" data-cfemail="a5c7dcd6cdd7dccdc4e5c2c8c4ccc98bc6cac8">[email&#160;protected]</span></a></p>
+            <p>
+              <strong>Instagram:</strong>
+              <a href="https://instagram.com/Asmaalshurayhi" target="_blank">@Asmaalshurayhi</a>
+            </p>
+            <p>
+              <strong>LinkedIn:</strong>
+              <a href="https://www.linkedin.com/in/asma-alshurayhi-97071a34a?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app" target="_blank">Asma Alshurayhi</a>
+            </p>
+          </div>
+      </section>
+    </main>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        });
+      });
+    </script>
+  
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9b0a3dc52c4288bf","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body></html>
